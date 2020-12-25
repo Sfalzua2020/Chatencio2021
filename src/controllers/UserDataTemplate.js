@@ -9,7 +9,7 @@
         this.email = "";
         this.superAdmin = false;
         this.groupAdmin = false;
-        this.profileImage = "images/default/profile.gif";
+        this.profileImage = "profile.gif";
         this.groups = [
             {
                 "name": "newbies",

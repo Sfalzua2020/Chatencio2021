@@ -1,22 +1,14 @@
 {
-  "name": "web-chat-app",
+  "name": "piso-de-mercado-restful",
   "version": "1.0.0",
-  "description": "## Installation",
+  "description": "Chat app",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edmondchuc/web-chat-app.git"
-  },
-  "author": "Edmond Chuc",
+  "author": "ghp",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/edmondchuc/web-chat-app/issues"
-  },
-  "homepage": "https://github.com/edmondchuc/web-chat-app#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

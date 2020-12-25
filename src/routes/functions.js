@@ -92,7 +92,7 @@ function createUser(username, password, email) {
             "email": email,
             "superAdmin": false,
             "groupAdmin": false,
-            "profileImage": "images/default/profile.gif",
+            "profileImage": "profile.gif",
             "groups": [
                 {
                     "name": "newbies",
@@ -128,7 +128,7 @@ function createSuperUser() {
             "email": "super@admin.com",
             "superAdmin": true,
             "groupAdmin": true,
-            "profileImage": "images/default/profile.gif",
+            "profileImage": "profile.gif",
             "groups": [
                 {
                     "name": "newbies",

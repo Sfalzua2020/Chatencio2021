@@ -5,6 +5,7 @@ const client = require('../controllers/database')
 const collectionName = 'users'
 const UserDataTemplate = require('../controllers/UserDataTemplate')
 const functions = require('./functions')
+const path = require('path')
 
 
 // get messages for particular channel in a group
@@ -19,7 +20,7 @@ router.get('/api/channel/messages', async (req, res) => {
 // upload image
 router.post('/api/image/upload', (req, res) => {
     console.log('POST request at /api/image/upload')
-    let form = new formidable.IncomingForm({uploadDir:'./images'})
+    let form = new formidable.IncomingForm({uploadDir: path.resolve(__dirname, '..', 'images')})
     form.keepExtensions = true
 
     form.on('error', (err) => {
@@ -54,11 +55,10 @@ router.post('/api/image/upload', (req, res) => {
 
 // update user profile image
 router.post('/api/user/update', (req, res) => {
-    console.log('POST request at /api/user/update')
     const collection = client.db('chatencio').collection(collectionName)
-    let imagePath = req.body.profileImage
-    imagePath = imagePath.slice(2)
-    console.log(imagePath)
+    console.log("req.body de /user/update", req.body)
+    const imagePath = req.body.profileImage
+    console.log('POST request at /api/user/update', req.body.username, imagePath)
     collection.updateOne({username: req.body.username}, {$set: {profileImage: imagePath}})
     res.send({success:true})
 })
